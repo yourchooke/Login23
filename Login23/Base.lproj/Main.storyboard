@@ -47,6 +47,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot User Name?" titleAlignment="leading">
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotUserNameButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vir-OC-9rx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcB-BU-Ee1">
                                         <rect key="frame" x="191" y="0.0" width="191" height="34"/>
@@ -54,6 +57,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot Password?" titleAlignment="trailing">
                                             <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotPasswordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="7rH-Vp-0DI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -69,6 +75,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQU-HP-aXj" secondAttribute="trailing" constant="20" id="hGt-ZN-vzu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTF" destination="Ehh-IR-0Rc" id="FUt-GE-ttX"/>
+                        <outlet property="userNameTF" destination="yor-gm-5N5" id="AAU-ev-m5s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
