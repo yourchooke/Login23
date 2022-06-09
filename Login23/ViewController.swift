@@ -18,9 +18,14 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func forgotUserNameButtonPressed() {
-        showAlert(with: "Oops!", and: "Your name is User 😜")
+    
+    
+
+    @IBAction func forgotUserButtonPressed() {
+        showAlert(with: "Oops!", and: "Your User Name is User 🤫")
     }
+    
+    
     
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(with: "Oops!", and: "Your password is Pass 🤫")
@@ -35,9 +40,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func showAlert(with title: String, and message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userNameTF.text = ""
-        }
+        let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
     }
