@@ -20,9 +20,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userNameTF.returnKeyType = .next
         passwordTF.returnKeyType = .done
         
-        // Нагугленное про клавиатуру
-        self.userNameTF.delegate = self
-        self.passwordTF.delegate = self
+        userNameTF.delegate = self
+        passwordTF.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
