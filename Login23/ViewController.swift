@@ -18,14 +18,15 @@ class ViewController: UIViewController {
         
     }
 
-    
+    // Метод для скрытия клавиатуры тапом по экрану
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    super .touchesBegan(touches, with: event)
+    }
     
 
     @IBAction func forgotUserButtonPressed() {
         showAlert(with: "Oops!", and: "Your User Name is User 🤫")
     }
-    
-    
     
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(with: "Oops!", and: "Your password is Pass 🤫")
