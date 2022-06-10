@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     private var loginsDictionary = ["User":"Pass", "User1":"Pass1"]
     
@@ -17,6 +17,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userNameTF.returnKeyType = .next
+        passwordTF.returnKeyType = .done
+        
+        // Нагугленное про клавиатуру
+        self.userNameTF.delegate = self
+        self.passwordTF.delegate = self
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,6 +44,8 @@ class ViewController: UIViewController {
         showAlert(with: "Oops!", and: "Your password is Pass 🤫")
     }
     
+    
+    
     @IBAction func logInButtonPressed(_ sender: Any) {
         guard let user = userNameTF.text else {
             return
@@ -49,6 +58,7 @@ class ViewController: UIViewController {
             return
         } else {
             showAlert(with: "Wrong User Name or Password", and: "Please enter correct User Name and Password")
+            passwordTF.text = ""
         }
     }
     
@@ -56,7 +66,16 @@ class ViewController: UIViewController {
         userNameTF.text = ""
         passwordTF.text = ""
     }
+    
+    // Работа с клавиатурой
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField == userNameTF { passwordTF.becomeFirstResponder()} else {
+                view.endEditing(true)}
+            return false
+        }
+
 }
+
 
 
 // MARK: - Private Methods
