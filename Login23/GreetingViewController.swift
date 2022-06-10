@@ -16,6 +16,5 @@ class GreetingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         greetingLabel.text = "Hello, " + userName + "!"
-
     }
 }

@@ -23,7 +23,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Нагугленное про клавиатуру
         self.userNameTF.delegate = self
         self.passwordTF.delegate = self
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,7 +57,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func forgotPasswordButtonPressed() {
         showAlert(with: "Oops!", and: "Your password is Pass 🤫")
     }
-    
     
     @IBAction func logInButtonPressed() {
         loginPassVerification()
