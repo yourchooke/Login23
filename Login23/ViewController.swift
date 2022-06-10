@@ -51,6 +51,11 @@ class ViewController: UIViewController {
             showAlert(with: "Wrong User Name or Password", and: "Please enter correct User Name and Password")
         }
     }
+    
+    @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
+    }
 }
 
 
