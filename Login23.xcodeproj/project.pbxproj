@@ -13,6 +13,7 @@
 		27475B1C2851F57500E1C53A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27475B1A2851F57500E1C53A /* Main.storyboard */; };
 		27475B1E2851F57900E1C53A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27475B1D2851F57900E1C53A /* Assets.xcassets */; };
 		27475B212851F57900E1C53A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27475B1F2851F57900E1C53A /* LaunchScreen.storyboard */; };
+		27475B292853504700E1C53A /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27475B282853504700E1C53A /* GreetingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		27475B1D2851F57900E1C53A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27475B202851F57900E1C53A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27475B222851F57900E1C53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27475B282853504700E1C53A /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		27475B132851F57500E1C53A /* Login23 */ = {
 			isa = PBXGroup;
 			children = (
+				27475B282853504700E1C53A /* GreetingViewController.swift */,
 				27475B142851F57500E1C53A /* AppDelegate.swift */,
 				27475B162851F57500E1C53A /* SceneDelegate.swift */,
 				27475B182851F57500E1C53A /* ViewController.swift */,
@@ -141,6 +144,7 @@
 				27475B192851F57500E1C53A /* ViewController.swift in Sources */,
 				27475B152851F57500E1C53A /* AppDelegate.swift in Sources */,
 				27475B172851F57500E1C53A /* SceneDelegate.swift in Sources */,
+				27475B292853504700E1C53A /* GreetingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
