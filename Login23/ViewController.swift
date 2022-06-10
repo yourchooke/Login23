@@ -35,6 +35,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     super .touchesBegan(touches, with: event)
     }
+    
+    func loginPassVerification(){
+        guard let user = userNameTF.text else {
+            return
+        }
+        guard let pass = passwordTF.text else {
+            return
+        }
+        if loginsDictionary[user] == pass {
+            return
+        } else {
+            showAlert(with: "Wrong User Name or Password", and: "Please enter correct User Name and Password")
+            passwordTF.text = ""
+        }
+    }
 
     @IBAction func forgotUserButtonPressed() {
         showAlert(with: "Oops!", and: "Your User Name is User 🤫")
@@ -45,21 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
-    @IBAction func logInButtonPressed(_ sender: Any) {
-        guard let user = userNameTF.text else {
-            return
-        }
-        guard let pass = passwordTF.text else {
-            return
-        }
-        
-        if loginsDictionary[user] == pass {
-            return
-        } else {
-            showAlert(with: "Wrong User Name or Password", and: "Please enter correct User Name and Password")
-            passwordTF.text = ""
-        }
+    @IBAction func logInButtonPressed() {
+        loginPassVerification()
     }
     
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
@@ -68,9 +70,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Работа с клавиатурой
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            if textField == userNameTF { passwordTF.becomeFirstResponder()} else {
-                view.endEditing(true)}
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField == userNameTF { passwordTF.becomeFirstResponder()
+            } else {
+                loginPassVerification()
+                view.endEditing(true)
+            }
             return false
         }
 
