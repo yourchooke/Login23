@@ -23,24 +23,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userNameTF.delegate = self
         passwordTF.delegate = self
     }
-    
+    // Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingVC = segue.destination as? GreetingViewController else { return }
-        greetingVC.userName = userNameTF.text
+        let tabBarController = segue.destination as! UITabBarController
+        for viewController in tabBarController.viewControllers! {
+            if let greetingVC = viewController as? GreetingViewController {
+                greetingVC.userName = userNameTF.text
+            }
+        }
+        
+    //    greetingVC.userName = userNameTF.text
     }
 
     // Метод для скрытия клавиатуры тапом по экрану
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super .touchesBegan(touches, with: event)
+        super .touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
-    func loginPassVerification(){
+    private func loginPassVerification(){
         guard let user = userNameTF.text else {
             return
         }
         guard let pass = passwordTF.text else {
             return
         }
+        
         if loginsDictionary[user] == pass {
             return
         } else {
@@ -69,14 +77,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Работа с клавиатурой
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            if textField == userNameTF { passwordTF.becomeFirstResponder()
-            } else {
+            if textField == userNameTF {
+                passwordTF.becomeFirstResponder()
+                } else {
                 loginPassVerification()
                 view.endEditing(true)
+                performSegue(withIdentifier: "showGVC", sender: nil)
             }
             return false
         }
-
 }
 
 
