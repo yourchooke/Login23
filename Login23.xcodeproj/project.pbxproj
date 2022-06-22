@@ -15,6 +15,8 @@
 		27475B212851F57900E1C53A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27475B1F2851F57900E1C53A /* LaunchScreen.storyboard */; };
 		27475B292853504700E1C53A /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27475B282853504700E1C53A /* GreetingViewController.swift */; };
 		27475B2F285CC70400E1C53A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27475B2E285CC70400E1C53A /* User.swift */; };
+		27475B312863352100E1C53A /* HobbiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27475B302863352100E1C53A /* HobbiesViewController.swift */; };
+		27475B332863356E00E1C53A /* ChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27475B322863356E00E1C53A /* ChildrenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		27475B222851F57900E1C53A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27475B282853504700E1C53A /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		27475B2E285CC70400E1C53A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		27475B302863352100E1C53A /* HobbiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesViewController.swift; sourceTree = "<group>"; };
+		27475B322863356E00E1C53A /* ChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				27475B182851F57500E1C53A /* LoginViewController.swift */,
 				27475B282853504700E1C53A /* GreetingViewController.swift */,
+				27475B302863352100E1C53A /* HobbiesViewController.swift */,
+				27475B322863356E00E1C53A /* ChildrenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 				27475B192851F57500E1C53A /* LoginViewController.swift in Sources */,
 				27475B152851F57500E1C53A /* AppDelegate.swift in Sources */,
 				27475B172851F57500E1C53A /* SceneDelegate.swift in Sources */,
+				27475B332863356E00E1C53A /* ChildrenViewController.swift in Sources */,
+				27475B312863352100E1C53A /* HobbiesViewController.swift in Sources */,
 				27475B2F285CC70400E1C53A /* User.swift in Sources */,
 				27475B292853504700E1C53A /* GreetingViewController.swift in Sources */,
 			);

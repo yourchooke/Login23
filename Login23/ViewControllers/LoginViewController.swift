@@ -14,6 +14,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    let users = User.getUsers()
+    var currentUser = User.getEmptyUser()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,11 +31,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let tabBarController = segue.destination as! UITabBarController
         for viewController in tabBarController.viewControllers! {
             if let greetingVC = viewController as? GreetingViewController {
-                greetingVC.userName = userNameTF.text
+                greetingVC.currentUser = currentUser
             }
         }
-        
-    //    greetingVC.userName = userNameTF.text
     }
 
     // Метод для скрытия клавиатуры тапом по экрану
@@ -41,19 +42,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    private func loginPassVerification(){
-        guard let user = userNameTF.text else {
-            return
-        }
-        guard let pass = passwordTF.text else {
-            return
-        }
-        
-        if loginsDictionary[user] == pass {
-            return
-        } else {
-            showAlert(with: "Wrong User Name or Password", and: "Please enter correct User Name and Password")
-            passwordTF.text = ""
+    private func loginPassVerification() {
+        for user in users {
+            if user.user == userNameTF.text && user.pass == passwordTF.text {
+                currentUser = user
+            } else {
+                return
+            }
+            if currentUser.user == "" {
+                showAlert(with: "Wrong User Name or Password",
+                          and: "Please enter correct User Name and Password")
+                passwordTF.text = "" }
         }
     }
 
