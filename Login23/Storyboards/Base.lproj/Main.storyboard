@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="65.625"/>
         </scene>
-        <!--Person-->
+        <!--Профиль-->
         <scene sceneID="Mdd-2u-NMh">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="z8I-dI-fgX" customClass="GreetingViewController" customModule="Login23" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4y-DX-IDE">
-                                <rect key="frame" x="16" y="401" width="288" height="42"/>
+                                <rect key="frame" x="16" y="437" width="288" height="42"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
@@ -112,21 +112,30 @@
                                     <segue destination="QKY-NB-Wjw" kind="unwind" unwindAction="unwindFor:" id="Y6e-2a-i2Q"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSC-39-k4w">
+                                <rect key="frame" x="101.5" y="221" width="117" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rtU-mI-Cvz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pZZ-7D-hlV" firstAttribute="leading" secondItem="rtU-mI-Cvz" secondAttribute="leading" constant="16" id="29C-My-d6J"/>
                             <constraint firstItem="pZZ-7D-hlV" firstAttribute="top" secondItem="rtU-mI-Cvz" secondAttribute="top" constant="153" id="6uK-Qd-Deq"/>
+                            <constraint firstItem="rSC-39-k4w" firstAttribute="centerX" secondItem="uon-KT-czz" secondAttribute="centerX" id="FkP-yo-fcf"/>
+                            <constraint firstItem="rtU-mI-Cvz" firstAttribute="bottom" secondItem="R4y-DX-IDE" secondAttribute="bottom" constant="20" id="I0d-jx-3Ow"/>
                             <constraint firstItem="R4y-DX-IDE" firstAttribute="leading" secondItem="rtU-mI-Cvz" secondAttribute="leading" constant="16" id="RaD-P5-wtp"/>
                             <constraint firstItem="rtU-mI-Cvz" firstAttribute="trailing" secondItem="pZZ-7D-hlV" secondAttribute="trailing" constant="16" id="UMN-I9-Qj6"/>
                             <constraint firstItem="rtU-mI-Cvz" firstAttribute="trailing" secondItem="R4y-DX-IDE" secondAttribute="trailing" constant="16" id="d3L-Tw-uCH"/>
-                            <constraint firstItem="R4y-DX-IDE" firstAttribute="top" secondItem="pZZ-7D-hlV" secondAttribute="bottom" constant="200" id="rAx-Yc-P5l"/>
+                            <constraint firstItem="rSC-39-k4w" firstAttribute="top" secondItem="pZZ-7D-hlV" secondAttribute="bottom" constant="20" id="zYz-2B-2F8"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Person" image="person" catalog="system" id="FeW-aq-dMe"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person" catalog="system" id="FeW-aq-dMe"/>
                     <navigationItem key="navigationItem" id="aHG-mM-07D"/>
                     <connections>
+                        <outlet property="emojiLabel" destination="rSC-39-k4w" id="JdU-FE-87h"/>
                         <outlet property="greetingLabel" destination="pZZ-7D-hlV" id="Yke-A6-UEl"/>
                     </connections>
                 </viewController>
@@ -135,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="1813.0434782608697" y="65.625"/>
         </scene>
-        <!--Hobbies View Controller-->
+        <!--Хобби-->
         <scene sceneID="G9W-6A-YAe">
             <objects>
                 <viewController id="Mkg-KO-GhV" customClass="HobbiesViewController" customModule="Login23" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,55 +152,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-Qs-3eI">
-                                <rect key="frame" x="16" y="96" width="288" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8fI-rw-C6e">
+                                <rect key="frame" x="107.5" y="249.5" width="105.5" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKg-Ag-oHz">
+                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Увлечения:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="ComicSansMS-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPZ-Qs-3eI">
+                                        <rect key="frame" x="0.0" y="28.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="70i-dq-Iks"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="70i-dq-Iks" firstAttribute="trailing" secondItem="NPZ-Qs-3eI" secondAttribute="trailing" constant="16" id="ewm-wd-Mkv"/>
-                            <constraint firstItem="NPZ-Qs-3eI" firstAttribute="top" secondItem="70i-dq-Iks" secondAttribute="top" constant="40" id="pAa-Bc-LP4"/>
-                            <constraint firstItem="NPZ-Qs-3eI" firstAttribute="leading" secondItem="70i-dq-Iks" secondAttribute="leading" constant="16" id="x26-gD-7J8"/>
+                            <constraint firstItem="8fI-rw-C6e" firstAttribute="centerY" secondItem="49Y-nS-WxZ" secondAttribute="centerY" id="cx7-dA-Gos"/>
+                            <constraint firstItem="8fI-rw-C6e" firstAttribute="centerX" secondItem="49Y-nS-WxZ" secondAttribute="centerX" id="fjN-NY-G5H"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Хобби" image="puzzlepiece" catalog="system" id="Wpc-fO-qv4"/>
                     <navigationItem key="navigationItem" id="dMf-a1-DL1"/>
+                    <connections>
+                        <outlet property="listOfHobbies" destination="NPZ-Qs-3eI" id="vMp-Bp-EVB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbJ-3g-czc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3601" y="66"/>
+            <point key="canvasLocation" x="2604.375" y="64.436619718309856"/>
         </scene>
-        <!--View Controller-->
+        <!--Детки-->
         <scene sceneID="RCD-Hn-ggs">
             <objects>
-                <viewController id="X0D-hZ-DhL" sceneMemberID="viewController">
+                <viewController id="X0D-hZ-DhL" customClass="ChildrenViewController" customModule="Login23" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffb-0A-G2H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-VR-Kdj">
-                                <rect key="frame" x="16" y="76" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="A61-ZL-pcn">
+                                <rect key="frame" x="118" y="249.5" width="84" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgt-W1-Oet">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="23.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Деточки:">
+                                                <attributes>
+                                                    <font key="NSFont" size="20" name="ComicSansMS-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-VR-Kdj">
+                                        <rect key="frame" x="0.0" y="28.5" width="84" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qIB-wd-l9A"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="iTV-VR-Kdj" firstAttribute="top" secondItem="qIB-wd-l9A" secondAttribute="top" constant="20" id="OS3-fQ-L6l"/>
-                            <constraint firstItem="qIB-wd-l9A" firstAttribute="trailing" secondItem="iTV-VR-Kdj" secondAttribute="trailing" constant="16" id="oEp-bv-QjC"/>
-                            <constraint firstItem="iTV-VR-Kdj" firstAttribute="leading" secondItem="qIB-wd-l9A" secondAttribute="leading" constant="16" id="qoK-W1-B0H"/>
+                            <constraint firstItem="A61-ZL-pcn" firstAttribute="centerY" secondItem="Ffb-0A-G2H" secondAttribute="centerY" id="Sxk-G2-9gM"/>
+                            <constraint firstItem="A61-ZL-pcn" firstAttribute="centerX" secondItem="Ffb-0A-G2H" secondAttribute="centerX" id="dI3-sS-pQD"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Детки" image="person.3.fill" catalog="system" id="f5B-a3-Gek"/>
                     <navigationItem key="navigationItem" id="eSD-Qa-4nH"/>
+                    <connections>
+                        <outlet property="listOfChildren" destination="iTV-VR-Kdj" id="TJN-Yy-bVn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B3V-vL-xpH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5417" y="64"/>
+            <point key="canvasLocation" x="3361.875" y="64.436619718309856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iab-J5-hc4">
@@ -206,60 +255,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="z8I-dI-fgX" kind="relationship" relationship="viewControllers" id="EG4-AL-znq"/>
-                        <segue destination="5Qj-dY-DAv" kind="relationship" relationship="viewControllers" id="A2o-GY-7cy"/>
-                        <segue destination="vpE-QM-JEg" kind="relationship" relationship="viewControllers" id="IB1-t7-jk5"/>
+                        <segue destination="Mkg-KO-GhV" kind="relationship" relationship="viewControllers" id="cSb-7g-xkq"/>
+                        <segue destination="X0D-hZ-DhL" kind="relationship" relationship="viewControllers" id="B1x-tw-llG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKA-Xy-gFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="65.625"/>
         </scene>
-        <!--Hobbies-->
-        <scene sceneID="DtJ-KR-1jU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5Qj-dY-DAv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hobbies" image="puzzlepiece" catalog="system" id="ctc-9i-VeD"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cQk-hy-DKW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Mkg-KO-GhV" kind="relationship" relationship="rootViewController" id="Cao-yY-O5u"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKq-CQ-wvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2713" y="66"/>
-        </scene>
-        <!--Children-->
-        <scene sceneID="Q8t-ad-mWt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vpE-QM-JEg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Children" image="person.3" catalog="system" id="vqc-4d-GoS"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y9g-Fw-QKe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="X0D-hZ-DhL" kind="relationship" relationship="rootViewController" id="Vgu-ms-WnY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uAR-Tg-2YA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4506" y="65"/>
-        </scene>
     </scenes>
     <resources>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="puzzlepiece" catalog="system" width="128" height="83"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

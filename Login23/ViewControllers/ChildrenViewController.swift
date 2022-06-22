@@ -8,22 +8,18 @@
 import UIKit
 
 class ChildrenViewController: UIViewController {
+    
+    @IBOutlet weak var listOfChildren: UILabel!
+    var currentUser: User!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        listOfChildren.text = ""
+        for child in currentUser.person.children {
+            listOfChildren.text! += "🐣" + child + "\n"
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

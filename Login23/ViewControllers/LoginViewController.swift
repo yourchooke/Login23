@@ -9,8 +9,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    private var loginsDictionary = ["User":"Pass", "User1":"Pass1"]
-    
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
@@ -33,6 +31,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let greetingVC = viewController as? GreetingViewController {
                 greetingVC.currentUser = currentUser
             }
+            
+            if let hobbiesVC = viewController as? HobbiesViewController {
+                hobbiesVC.currentUser = currentUser
+            }
+            
+            if let childrenVC = viewController as? ChildrenViewController {
+                childrenVC.currentUser = currentUser
+            }
         }
     }
 
@@ -46,14 +52,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         for user in users {
             if user.user == userNameTF.text && user.pass == passwordTF.text {
                 currentUser = user
-            } else {
-                return
             }
-            if currentUser.user == "" {
-                showAlert(with: "Wrong User Name or Password",
-                          and: "Please enter correct User Name and Password")
-                passwordTF.text = "" }
         }
+        if currentUser.user == "" {
+            showAlert(with: "Wrong User Name or Password",
+                      and: "Please enter correct User Name and Password")
+            passwordTF.text = "" }
     }
 
     @IBAction func forgotUserButtonPressed() {
@@ -71,6 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func unwind(for unwindSegue: UIStoryboardSegue) {
         userNameTF.text = ""
         passwordTF.text = ""
+        currentUser = User.getEmptyUser()
     }
     
     // Работа с клавиатурой

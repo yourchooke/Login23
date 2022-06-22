@@ -9,9 +9,18 @@ import UIKit
 
 class HobbiesViewController: UIViewController {
 
+    @IBOutlet weak var listOfHobbies: UILabel!
+    
+    var currentUser: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(currentUser.user)
 
+        listOfHobbies.text = ""
+        for hobby in currentUser.person.hobbies {
+            listOfHobbies.text! += "🐞" + hobby + "\n"
+        }
     }
     
 
